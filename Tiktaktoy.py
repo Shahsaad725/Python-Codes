@@ -8,7 +8,6 @@ import winsound as wi
 replay = 1
 
 while replay ==1:       # for retrying
-
     screen = t.Screen()
     screen = t.setup(width=600, height=800)
     screen = t.bgpic("Bg_pic/Gif Format/view-illuminated-neon-gaming-keyboard-setup-controller.gif")
@@ -141,7 +140,7 @@ while replay ==1:       # for retrying
     pen.goto(x_axis,y_axis)
     pen.down()
 
-    def typing_sound(duration=0.05,frequency=1500):
+    def typing_sound(duration=0.01,frequency=1500):
         #  duration is the period of sounding
         # frequency is of the sound
         wi.Beep(frequency,int(duration*1000))
@@ -271,18 +270,7 @@ while replay ==1:       # for retrying
 
     # ______________________________Clearing the Quadrants Names______________________________________
 
-    # __________________________________pen2 for clearing quadrants name__________________________
-    # pen_2 = t.Turtle()
-    # pen_2 = t.pencolor(t.bgcolor())
 
-
-
-    # pen2 = t.penup()
-    # pen2 = t.goto(-110,60)
-    # pen2 = t.pendown()
-    # pen2 = t.pencolor(t.bgcolor())
-    # q1   = t.write("    ", align="center", font=("Arial",24,"italic"))
-    # pen2 = t.hideturtle()
 
     ti.sleep(4)
     t.clear()
@@ -311,50 +299,8 @@ while replay ==1:       # for retrying
     pen1 = t.right(90)
     pen1 = t.backward(150)
     pen1 = t.forward(400)
-    # __________________________________________Showing who one is to play______________________________________
 
-    # __________________________________________ChatGPT______________________________________
-
-
-
-
-
-
-
-    # Create a turtle object
-    # pen = t.Turtle()
-    # pen.pensize(2)
-    # pen.speed(10)
-    # pen.hideturtle()
-
-    # # Function to show instructions and player names
-    # def show_instructions_and_players():
-    #     # Show instructions
-    #     pen.penup()  # Move the pen without drawing
-    #     pen.goto(-200, -350)  # Move to the position
-    #     pen.pendown()  # Start drawing
-    #     pen.hideturtle()  # Hide the pen cursor
-    #     pen.write("The Player Have to Play (Enter Quadrant NO)", align="center", font=("Arial", 24, "italic"))
-
-    #     # Display player names
-    #     x = -600
-    #     y = -380
-    #     for i in range(9):
-    #         pen.penup()
-    #         pen.goto(x, y)
-    #         pen.pendown()
-    #         player_name = "Player_1" if i % 2 == 0 else "Player_2"
-    #         pen.write(player_name, align="center", font=("Arial", 14, "normal"))
-    #         x += 80
-
-    # # Call the function to execute the drawing and text writing
-    # show_instructions_and_players()
-
-    # # Finish up
-    # t.done()
-
-    # _____________________________________________ChatGPT Ended_______________________________________________
-
+    
 
 
     # ___________________________________________Getting Quadrant No___________________________________________
@@ -365,20 +311,9 @@ while replay ==1:       # for retrying
 
     winner_1 = []
     winner_2 = []
+    winner = []
+    position = 0
 
-    # first_1 = 0
-    # second_1 = 0
-    # third_1 = 0
-    # first_2 = 0
-    # second_2 = 0
-    # third_2 = 0
-
-    # w_1 = 0 
-    # w_1_2 =0
-    # w_1_3 =0
-    # w_2 = 0
-    # w_2_2 =0
-    # w_2_3 =0
 
     # Initialize the turtles
     pen1 = t.Turtle()
@@ -398,10 +333,6 @@ while replay ==1:       # for retrying
     # draw_labels()
 
     for k in range(9):
-
-        
-
-
 
         Q_No = get_quadrant_no(k)
         
@@ -450,86 +381,88 @@ while replay ==1:       # for retrying
                 case 2:
                     return 'o'
                 case 3:
-                    return 'g'
+                    return 'n'
                 case 4:
-                    return 'r'
+                    return 'g'
                 case 5:
-                    return 'a'
+                    return 'r'
                 case 6:
-                    return 't'
-                case 7:
-                    return 'u'
-                case 8:
-                    return 'l'
-                case 9:
                     return 'a'
-                case 10:
+                case 7:
                     return 't'
+                case 8:
+                    return 'u'
+                case 9:
+                    return 'l'
+                case 10:
+                    return 'a'
                 case 11:
-                    return 'i'
+                    return 't'
                 case 12:
-                    return 'o'
-                case 13:
-                    return 'n'
-                case 14:
-                    return 's'
-                case 15:
-                    return '!'
-                case 16:
-                    return ' '
-                case 17:
-                    return 'T'
-                case 18:
-                    return 'h'
-                case 19:
-                    return 'e'
-                case 20:
-                    return ' '
-                case 21:
-                    return 'P'
-                case 22:
-                    return 'L'
-                case 23:
-                    return 'A'
-                case 24:
-                    return 'Y'
-                case 25:
-                    return 'E'
-                case 26:
-                    return 'R'
-                case 27:
-                    return '_'
-                case 28:
-                    return  w    #_____________w is defined below in winner condition 
-                case 29:
-                    return ' '
-                case 30:
-                    return 'I'            
-                case 31:
-                    return 's'
-                case 32:
-                    return ' '
-                case 33:
-                    return 'T'
-                case 34:
-                    return 'h'
-                case 35:
-                    return 'e'
-                case 36:
-                    return ' '
-                case 37:
-                    return 'W'
-                case 38:
                     return 'i'
-                case 39:
+                case 13:
+                    return 'o'
+                case 14:
                     return 'n'
+                case 15:
+                    return 's'
+                case 16:
+                    return '!'
+                case 17:
+                    return ' '
+                case 18:
+                    return 'T'
+                case 19:
+                    return 'h'
+                case 20:
+                    return 'e'
+                case 21:
+                    return ' '
+                case 22:
+                    return 'P'
+                case 23:
+                    return 'L'
+                case 24:
+                    return 'A'
+                case 25:
+                    return 'Y'
+                case 26:
+                    return 'E'
+                case 27:
+                    return 'R'
+                case 28:
+                    return '_'
+                case 29:
+                    return  w    #_____________w is defined below in winner condition 
+                case 30:
+                    return ' '
+                case 31:
+                    return 'I'            
+                case 32:
+                    return 's'
+                case 33:
+                    return ' '
+                case 34:
+                    return 'T'
+                case 35:
+                    return 'h'
+                case 36:
+                    return 'e'
+                case 37:
+                    return ' '
+                case 38:
+                    return 'W'
+                case 39:
+                    return 'i'
                 case 40:
                     return 'n'
                 case 41:
-                    return 'e'
+                    return 'n'
                 case 42:
-                    return 'r'
+                    return 'e'
                 case 43:
+                    return 'r'
+                case 44:
                     return '.'
         
         def alert_2(i):
@@ -658,7 +591,20 @@ while replay ==1:       # for retrying
                     return 'n'
                 case 62:
                     return '.'
+
+
+        def winning_line(winner):
+            pen1.up()
+            for i in winner:
+                position = labels.get(i)
+                    
+                if position is not None:
+                    x,y = position    
+                    pen1.down()
+                    pen1.goto(x,y)
     
+                
+
 
         
         def winner (player_tik):
@@ -675,9 +621,17 @@ while replay ==1:       # for retrying
             return False     
                 
                 
-                
-    # if (((first_1 == 1 | first_1 == 2 | first_1 == 3) & (second_1 == 1 | second_1 == 2 | second_1 == 3) & (third_1 == 1 | third_1 == 2 | third_1 == 3)) | ((first_1 == 4 | first_1 == 5 | first_1 == 6) & (second_1 == 4 | second_1 == 5 | second_1 == 6) & (third_1 == 4 | third_1 == 5 | third_1 == 6)) | ((first_1 == 7 | first_1 == 8 | first_1 == 9) & (second_1 == 7 | second_1 == 8 | second_1 == 9) & (third_1 == 7 | third_1 == 8 | third_1 == 9)) | ((first_1 == 1 | first_1 == 4 | first_1 == 7) & (second_1 == 1 | second_1 == 4 | second_1 == 7) & (third_1 == 1 | third_1 == 4 | third_1 == 7)) | ((first_1 == 2 | first_1 == 5 | first_1 == 8) & (second_1 == 2 | second_1 == 5 | second_1 == 8) & (third_1 == 2 | third_1 == 5 | third_1 == 8)) | ((first_1 == 3 | first_1 == 6 | first_1 == 9) & (second_1 == 3 | second_1 == 6 | second_1 == 9) & (third_1 == 3 | third_1 == 6 | third_1 == 9)) | ((first_1 == 1 | first_1 == 5 | first_1 == 9) & (second_1 == 1 | second_1 == 5 | second_1 == 9) & (third_1 == 1 | third_1 == 5 | third_1 == 9)) | ((first_1 == 3 | first_1 == 5 | first_1 == 7) & (second_1 == 3 | second_1 == 5 | second_1 == 7) & (third_1 == 3 | third_1 == 5 | third_1 == 7))):
         if winner(winner_1): #____The value of winner_1 passes to player_moves and the functions(winner) is run
+                    
+                    pen1.up()
+                    winner = set(winner_1)
+                    winning_line(winner)
+                    # for i in winner_1:
+                    #     x,y = labels.get(Q_No)
+                    #     pen1.down()
+                    #     pen1.goto(x,y)
+                    
+                    
                     pen.penup()
                     x_axis = -600
                     y_axis = -350
@@ -687,10 +641,7 @@ while replay ==1:       # for retrying
                     pen.hideturtle()
                     # pen.write("Congratulations! The Player 1 Is The Winner", align="center", font=("Arial", 24 , "italic"))
                     
-                    
-                    
-                    
-                    
+                  
                     w=1    #_______To print the player no
                     
                     for i in range(43):
@@ -714,8 +665,13 @@ while replay ==1:       # for retrying
                     
 
                     break
-    # elif(((first_2 == 1 | first_2 == 2 | first_2 == 3) & (second_2 == 1 | second_2 == 2 | second_2 == 3) & (third_2 == 1 | third_2 == 2 | third_2 == 3)) | ((first_2 == 4 | first_2 == 5 | first_2 == 6) & (second_2 == 4 | second_2 == 5 | second_2 == 6) & (third_2 == 4 | third_2 == 5 | third_2 == 6)) | ((first_2 == 7 | first_2 == 8 | first_2 == 9) & (second_2 == 7 | second_2 == 8 | second_2 == 9) & (third_2 == 7 | third_2 == 8 | third_2 == 9)) | ((first_2 == 1 | first_2 == 4 | first_2 == 7) & (second_2 == 1 | second_2 == 4 | second_2 == 7) & (third_2 == 1 | third_2 == 4 | third_2 == 7)) | ((first_2 == 2 | first_2 == 5 | first_2 == 8) & (second_2 == 2 | second_2 == 5 | second_2 == 8) & (third_2 == 2 | third_2 == 5 | third_2 == 8)) | ((first_2 == 3 | first_2 == 6 | first_2 == 9) & (second_2 == 3 | second_2 == 6 | second_2 == 9) & (third_2 == 3 | third_2 == 6 | third_2 == 9)) | ((first_2 == 1 | first_2 == 5 | first_2 == 9) & (second_2 == 1 | second_2 == 5 | second_2 == 9) & (third_2 == 1 | third_2 == 5 | third_2 == 9)) | ((first_2 == 3 | first_2 == 5 | first_2 == 7) & (second_2 == 3 | second_2 == 5 | second_2 == 7) & (third_2 == 3 | third_2 == 5 | third_2 == 7))):
+
         elif winner(winner_2):
+            
+                    winner = set(winner_2)
+                    winning_line(winner)
+            
+            
                     pen.penup()
                     x_axis = -600
                     y_axis = -350                
@@ -731,11 +687,7 @@ while replay ==1:       # for retrying
         
                         masg = alert(i+1)                   
                         pen.penup()
-                        
-                        # if i == 38:
-                        #     x_axis = x_axis+20   #____For proper printing of i
-                        # if i == 39:
-                        #     x_axis = x_axis-30   #____For proper printing of other than i                    
+                   
                         
                         pen.goto(x_axis,y_axis)
                         pen.down()
@@ -751,163 +703,7 @@ while replay ==1:       # for retrying
 
 
 
-        # w_1 = 0
-        # w_1_2 +=w_1
-        # w_1_3 +=w_1_2
-        # # w_2 = 0
-        # w_2_2 +=w_2
-        # w_2_3 +=w_2_2
-
-        # for w in range(k):        #________For Increasing First Check_________________________
-        #     for second in range(w):   #________For Increasing second Check________________________
-        #         for third in range(second): #________For Increasing third Check________________________
-                    
-        #             first_1 = winner_1[w_1]
-        #             second_1= winner_1[w_1_2]
-        #             third_1 = winner_1[w_1_3]
-                    
-                    
-        #             if winner_1[w_1] >= first_1:
-        #                 first_1.estend([None]*(winner_1[w_1]+1 - len(first_1)))
-        #             if winner_2[w_1_2] >= second_1:
-        #                 second_1.extend([None]*(winner_1+1 - len(second_1)))
-        #             if winner_1[w_1_3] >= third:
-        #                 third_1.extend([None]*(winner_1[w_1_3]+1 - len(third_1)))  
-                        
-        #             first_1 = winner_1[w_1]
-        #             second_1= winner_1[w_1_2]        #___Initialized second time to so that the value of second_1 and third_1 is also increased_____________
-        #             third_1 = winner_1[w_1_3]
-                        
-
-        #             first_2 = winner_2[w_2]
-        #             second_2= winner_2[w_2_2]
-        #             second_2= winner_2[w_2_3]
-
-
-        #             if winner_1[w_1] >= first_1:
-        #                 first_1.estend([None]*(winner_1[w_1]+1 - len(first_1)))
-        #             if winner_2[w_1_2] >= second_1:
-        #                 second_1.extend([None]*(winner_1+1 - len(second_1)))
-        #             if winner_1[w_1_3] >= third:
-        #                 third_1.extend([None]*(winner_1[w_1_3]+1 - len(third_1))) 
-
-        #             first_2 = winner_2[w_2]
-        #             second_2= winner_2[w_2_2]
-        #             second_2= winner_2[w_2_3]
-
-
-                
-        #         def winner (player)
-                
-                
-
-
-        #             # if (((first_1 == 1 | first_1 == 2 | first_1 == 3) & (second_1 == 1 | second_1 == 2 | second_1 == 3) & (third_1 == 1 | third_1 == 2 | third_1 == 3)) | ((first_1 == 4 | first_1 == 5 | first_1 == 6) & (second_1 == 4 | second_1 == 5 | second_1 == 6) & (third_1 == 4 | third_1 == 5 | third_1 == 6)) | ((first_1 == 7 | first_1 == 8 | first_1 == 9) & (second_1 == 7 | second_1 == 8 | second_1 == 9) & (third_1 == 7 | third_1 == 8 | third_1 == 9)) | ((first_1 == 1 | first_1 == 4 | first_1 == 7) & (second_1 == 1 | second_1 == 4 | second_1 == 7) & (third_1 == 1 | third_1 == 4 | third_1 == 7)) | ((first_1 == 2 | first_1 == 5 | first_1 == 8) & (second_1 == 2 | second_1 == 5 | second_1 == 8) & (third_1 == 2 | third_1 == 5 | third_1 == 8)) | ((first_1 == 3 | first_1 == 6 | first_1 == 9) & (second_1 == 3 | second_1 == 6 | second_1 == 9) & (third_1 == 3 | third_1 == 6 | third_1 == 9)) | ((first_1 == 1 | first_1 == 5 | first_1 == 9) & (second_1 == 1 | second_1 == 5 | second_1 == 9) & (third_1 == 1 | third_1 == 5 | third_1 == 9)) | ((first_1 == 3 | first_1 == 5 | first_1 == 7) & (second_1 == 3 | second_1 == 5 | second_1 == 7) & (third_1 == 3 | third_1 == 5 | third_1 == 7))):
-        #             if winner(player_tik)  
-        #                 pen.penup()
-        #                 pen.goto(-200,-350)
-        #                 pen.pendown()
-        #                 pen.hideturtle()
-        #                 pen.write("Congratulations! The Player 1 Is The Winner", align="center", font=("Arial", 24 , "italic"))
-        #             # elif(((first_2 == 1 | first_2 == 2 | first_2 == 3) & (second_2 == 1 | second_2 == 2 | second_2 == 3) & (third_2 == 1 | third_2 == 2 | third_2 == 3)) | ((first_2 == 4 | first_2 == 5 | first_2 == 6) & (second_2 == 4 | second_2 == 5 | second_2 == 6) & (third_2 == 4 | third_2 == 5 | third_2 == 6)) | ((first_2 == 7 | first_2 == 8 | first_2 == 9) & (second_2 == 7 | second_2 == 8 | second_2 == 9) & (third_2 == 7 | third_2 == 8 | third_2 == 9)) | ((first_2 == 1 | first_2 == 4 | first_2 == 7) & (second_2 == 1 | second_2 == 4 | second_2 == 7) & (third_2 == 1 | third_2 == 4 | third_2 == 7)) | ((first_2 == 2 | first_2 == 5 | first_2 == 8) & (second_2 == 2 | second_2 == 5 | second_2 == 8) & (third_2 == 2 | third_2 == 5 | third_2 == 8)) | ((first_2 == 3 | first_2 == 6 | first_2 == 9) & (second_2 == 3 | second_2 == 6 | second_2 == 9) & (third_2 == 3 | third_2 == 6 | third_2 == 9)) | ((first_2 == 1 | first_2 == 5 | first_2 == 9) & (second_2 == 1 | second_2 == 5 | second_2 == 9) & (third_2 == 1 | third_2 == 5 | third_2 == 9)) | ((first_2 == 3 | first_2 == 5 | first_2 == 7) & (second_2 == 3 | second_2 == 5 | second_2 == 7) & (third_2 == 3 | third_2 == 5 | third_2 == 7))):
-        #                 pen.penup()
-        #                 pen.goto(-200,-350)
-        #                 pen.pendown()
-        #                 pen.hideturtle()
-        #                 pen.write("Congratulations! The Player 1 Is The Winner", align="center", font=("Arial", 24 , "italic"))                    
-
-
-
-        #         w_1_3 += 1
-        #     w_1_2 +=1
-        # w_1 += 1 
-            
-
-
-
-    # def get_quadrant_no():
-    #         window = tk.Tk()
-    #         window.withdraw()  # Hide the root window
-    #         # Prompt user for an integer input
-    #         in_Q = simpledialog.askinteger("Input", "Player {} !Enter an integer:".format(k+1))
-            
-    #         if in_Q <1 | in_Q >9:
-    #             while in_Q <1 | in_Q >9:
-    #                 in_Q = simpledialog.askinteger("Input", "Player {} !Please, Enter an integer:".format(k+1))
-
-            
-    #         window.destroy()  # Destroy the root window
-    #         return in_Q
-
-
-    #         return in_Q
-
-    # for k in range(9):
-    #     Q_No = get_quadrant_no()
-
-
-    # pen.penup()
-    # pen.goto(-200,-350)
-    # pen.pendown()
-    # pen.hideturtle()
-    # pen.write("The Player Have to Play(Enter Quadrant NO)", align="center", font=("Arial", 24 , "italic"))
-
-    # x = -600
-    # y = -380
-
-    # for i in range(9):
-    #     pen.penup()
-    #     pen.goto(x,y)
-    #     pen.pendown()
-    #     Player = "Player_2" if i % 2 == 0 else "Player_1"
-    #     pen.write(Player , align="center", font=("Arial", 14 , "normal"))
-    #     x = x+80
-    #     # tk.input(Q_No)
-
-
-    # __________________________________Targeting the Quardant_________________________________________
-
-        # if Q_No == 1:
-        #     x = -110
-        #     y = 60
-        # elif Q_No == 2:
-        #     x = 0
-        #     y = 60
-        # elif Q_No == 3:
-        #     x = 110
-        #     y = 60
-        # elif Q_No == 4:
-        #     x = -110
-        #     y = 0
-        # elif Q_No == 5:
-        #     x = 0
-        #     y = 0
-        # elif Q_No == 6:
-        #     x = 110
-        #     y = 0
-        # elif Q_No == 7:
-        #     x = -110
-        #     y = -60
-        # elif Q_No == 8:
-        #     x = 0
-        #     y = -60
-        # elif Q_No == 9:
-        #     x = 110
-        #     y = -60
-        
-            
-            
-            
-        # pen1 = t.penup()
-        # pen1 = t.goto(x,y)
-        # pen1 = t.pendown()
-        # if k % 2 == 0:
-        #     pen1.pencolor("blue")
-        #     pen1.circle(10)
-        # else:
-        #     pen1.pencolor("black")
-        #     pen1.circle(10)        
-        # pen1 = t.hideturtle()
+  
 # ________________________________________________Button for replay________________________________________
     replay = 0
     
