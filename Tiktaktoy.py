@@ -5,6 +5,7 @@ from tkinter import simpledialog
 import winsound as wi
 
 
+global replay  #______taken globally so that can be used in each function and can be updated correctly in button 
 replay = 1
 
 while replay ==1:       # for retrying
@@ -708,8 +709,10 @@ while replay ==1:       # for retrying
     replay = 0
     
     def assigning_true():
+        global replay
         replay = 1
     def assigning_false():
+        global replay
         replay = 0
     
     main_window = tk.Tk()   # main_window = tk.Tk(): Creates the main application window. tk.Tk() initializes the Tkinter framework and creates the root window, which serves as the main container for all other GUI elements.
@@ -725,7 +728,7 @@ while replay ==1:       # for retrying
     quit_button = tk.Button(frame,
                             text="Quit",
                             foreground="red",
-                            command = assigning_false )
+                            command = quit )
     quit_button.pack(side=tk.RIGHT)
     
     if replay == 1:
